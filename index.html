@@ -61,19 +61,19 @@
           </div>
         </div>
 
-        <!-- College -->
+        <!-- ID Card -->
         <div class="form-group">
-          <label for="college">ID Card</label>
-          <input type="text" class="form-control" id="college" name="college" required>
+          <label for="id_card">ID Card</label>
+          <input type="file" class="form-control" id="college" name="id_card" required>
           <div class="invalid-feedback">
             Please provide your ID Card.
           </div>
         </div>
 
-        <!-- Event -->
+        <!-- Registration Type -->
         <div class="form-group">
           <label for="event">Registration Type</label>
-          <select class="custom-select" id="event" name="event" onchange="displayForm(this)" required>
+          <select class="custom-select" id="registration_type" name="registration_type" onchange="displayForm(this)" required>
 
             <option selected disabled value="">Choose...</option>
             <option value="self">&nbsp;&nbsp;&nbsp;&nbsp;Self</option>
@@ -87,12 +87,12 @@
           </div>
         </div>
 
-
+        <!-- Number Of Tickets -->
         <div class="form-group">
           
           <div style="display: none" id = "self">
             <label for="no_of_tickets">Number Of Tickets</label>
-              <select class="custom-select" id="self" name="no_of_tickets" required>
+              <select class="custom-select" id="no_of_tickets" name="no_of_tickets" required>
                 <option selected disabled value = 1 >1</option>
               </select>
           </div>
@@ -103,26 +103,10 @@
           </div>
           
           <div class="invalid-feedback">
-            Please provide your ID Card.
+            Please provide the Number Of Tickets.
           </div>
         </div>
         
-        <!-- Category Selection -->
-        <div id="options">
-
-
-        </div>
-
-        <!-- No of Team Members -->
-        <div class="form-group d-none" id="no_of_team_members_field">
-          <label for="no_of_team_members">Number of Team Members</label>
-          <select class="custom-select" id="no_of_team_members" name="no_of_team_members">
-          </select>
-          <div class="invalid-feedback">Please select number of team members.</div>
-        </div>
-
-        <!-- Team Members -->
-        <div id="team_members"></div>
 
         <button class="col-12 btn btn-primary my-3" type="submit" value="sub" name="submit">Submit</button>
       </form>
@@ -157,7 +141,6 @@
   <script>
 
     function displayForm(elem){
-
       if(elem.value == "self") {
         document.getElementById('other').style.display = "none";
         document.getElementById('self').style.display = "block";
