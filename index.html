@@ -63,95 +63,53 @@
 
         <!-- College -->
         <div class="form-group">
-          <label for="college">College</label>
+          <label for="college">ID Card</label>
           <input type="text" class="form-control" id="college" name="college" required>
           <div class="invalid-feedback">
-            Please provide your college.
+            Please provide your ID Card.
           </div>
         </div>
 
         <!-- Event -->
         <div class="form-group">
-          <label for="event">Competition / Workshop</label>
-          <select class="custom-select" id="event" name="event" required>
+          <label for="event">Registration Type</label>
+          <select class="custom-select" id="event" name="event" onchange="displayForm(this)" required>
+
             <option selected disabled value="">Choose...</option>
-
-            <option disabled></option>
-            <option class="h5" disabled>Non-Technical Events</option class="h5">
-            <option value="born_psychos">&nbsp;&nbsp;&nbsp;&nbsp;Born Psychos</option>
-            <option value="cric_bash">&nbsp;&nbsp;&nbsp;&nbsp;Cric Bash</option>
-            <option value="food_o_holic">&nbsp;&nbsp;&nbsp;&nbsp;Food-O-Holic</option>
-            <option value="open_mic">&nbsp;&nbsp;&nbsp;&nbsp;Eccentrics</option>
-            <option value="respawn" id="respawn">&nbsp;&nbsp;&nbsp;&nbsp;Respawn</option>
-            <option value="vaad_vivaad" id="vaad_vivaad">&nbsp;&nbsp;&nbsp;&nbsp;Vaad-Vivaad</option>
-            <option value="virtual_placement">&nbsp;&nbsp;&nbsp;&nbsp;Virtual Placement</option>
-
-            <option disabled></option>
-            <option class="h5" disabled>Technical Events</option>
-            <option value="avishkar">&nbsp;&nbsp;&nbsp;&nbsp;Avishkar</option>
-            <option value="bridge_o_craft">&nbsp;&nbsp;&nbsp;&nbsp;Bridge-O-Craft</option>
-            <option value="explique'o_code">&nbsp;&nbsp;&nbsp;&nbsp;Explique'O Code</option>
-            <option value="ravic">&nbsp;&nbsp;&nbsp;&nbsp;Ravic</option>
-            <option value="robo_soccer">&nbsp;&nbsp;&nbsp;&nbsp;Robo-Soccer</option>
-
-            <option disabled></option>
-            <option class="h5" disabled>Workshops</option>
-            <option value="ai_ml">&nbsp;&nbsp;&nbsp;&nbsp;AI-ML Workshop</option>
-            <option value="ic_engine">&nbsp;&nbsp;&nbsp;&nbsp;IC Engine</option>
-            <option value="stargaze">&nbsp;&nbsp;&nbsp;&nbsp;Stargaze</option>
-            <option value="total_station" id="total_station">&nbsp;&nbsp;&nbsp;&nbsp;Total Station</option>
-            <option value="Workflow">&nbsp;&nbsp;&nbsp;&nbsp;Workflow</option>
+            <option value="self">&nbsp;&nbsp;&nbsp;&nbsp;Self</option>
+            <option value="group">&nbsp;&nbsp;&nbsp;&nbsp;Group</option>
+            <option value="corporate">&nbsp;&nbsp;&nbsp;&nbsp;Corporate</option>
+            <option value="others">&nbsp;&nbsp;&nbsp;&nbsp;Others</option>
+          
           </select>
           <div class="invalid-feedback">
             Please select a competiton or workshop.
           </div>
         </div>
 
-        <!-- Games -->
-        <div class="form-group d-none" id="games">
-          <label for="game">Game</label>
-          <select class="custom-select" id="game" name="game">
-            <option selected disabled value="">Choose...</option>
-            <option value="pubg">&nbsp;&nbsp;&nbsp;&nbsp;PUBG</option>
-            <option value="csgo">&nbsp;&nbsp;&nbsp;&nbsp;CS:GO</option>
-            <option value="fifa">&nbsp;&nbsp;&nbsp;&nbsp;FIFA</option>
-          </select>
-          <div class="invalid-feedback">Please select a game.</div>
-        </div>
 
+        <div class="form-group">
+          
+          <div style="display: none" id = "self">
+            <label for="no_of_tickets">Number Of Tickets</label>
+              <select class="custom-select" id="self" name="no_of_tickets" required>
+                <option selected disabled value = 1 >1</option>
+              </select>
+          </div>
+          
+          <div style="display: none" id = "other">
+            <label for="no_of_tickets">Number Of Tickets</label>
+              <input type="text" class="form-control" id="no_of_tickets" name="no_of_tickets" required>
+          </div>
+          
+          <div class="invalid-feedback">
+            Please provide your ID Card.
+          </div>
+        </div>
+        
         <!-- Category Selection -->
         <div id="options">
 
-          <div class="form-group d-none" id="category_field">
-            <label for="category">Category</label>
-            <select class="custom-select" id="category" name="category">
-              <option selected disabled value="">Choose...</option>
-              <option value="single">&nbsp;&nbsp;&nbsp;&nbsp;Single</option>
-              <option value="double">&nbsp;&nbsp;&nbsp;&nbsp;Double</option>
-            </select>
-            <div class="invalid-feedback">Please select a category.</div>
-          </div>
-
-          <div class="form-group d-none" id="category_pubg_field">
-            <label for="category">Category</label>
-            <select class="custom-select" id="category_pubg" name="category_pubg">
-              <option selected disabled value="">Choose...</option>
-              <option value="solo">&nbsp;&nbsp;&nbsp;&nbsp;Solo</option>
-              <option value="squad">&nbsp;&nbsp;&nbsp;&nbsp;Squad</option>
-              <option value="custom">&nbsp;&nbsp;&nbsp;&nbsp;Classic + Custom Room</option>
-            </select>
-            <div class="invalid-feedback">Please select a category.</div>
-          </div>
-
-          <div class="form-group d-none" id="category_fifa_field">
-            <label for="category">Category</label>
-            <select class="custom-select" id="category_fifa" name="category_fifa">
-              <option selected disabled value="">Choose...</option>
-              <option value="solo">&nbsp;&nbsp;&nbsp;&nbsp;Solo</option>
-              <option value="duo">&nbsp;&nbsp;&nbsp;&nbsp;Duo</option>
-            </select>
-            <div class="invalid-feedback">Please select a category.</div>
-          </div>
 
         </div>
 
@@ -171,6 +129,48 @@
 
     </div>
   </div>
+
+
+
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict';
+      window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
+
+  <script>
+
+    function displayForm(elem){
+
+      if(elem.value == "self") {
+        document.getElementById('other').style.display = "none";
+        document.getElementById('self').style.display = "block";
+      } else {
+        document.getElementById('self').style.display = "none";
+        document.getElementById('other').style.display = "block";
+      }
+    }
+
+  </script>
+
+
+
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
