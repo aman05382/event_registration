@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registration Form</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: darkblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container p-4 p-sm-5">
+
+    <div class="container rounded bg-light p-lg-5 p-3">
+
+      <h4 class="h2 text-center mt-3 mb-5">Registration Form</h4>
+
+      <form class="needs-validation" novalidate action="register.php" method="POST">
+
+        <!-- Name -->
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="first_name">First Name</label>
+            <input type="text" class="form-control" id="first_name" name="fname" required>
+            <div class="invalid-feedback">
+              Please provide your first name.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="last_name">Last Name</label>
+            <input type="text" class="form-control" id="last_name" name="lname" required>
+            <div class="invalid-feedback">
+              Please provide your last name.
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+            <div class="invalid-feedback">
+              Please provide your e-mail.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="phone_no">Phone No.</label>
+            <input type="tel" class="form-control" id="phone_no" pattern="[6-9]{1}[0-9]{9}" name="phone" required>
+            <div class="invalid-feedback">
+              Please provide your phone number.
+            </div>
+          </div>
+        </div>
+
+        <!-- College -->
+        <div class="form-group">
+          <label for="college">College</label>
+          <input type="text" class="form-control" id="college" name="college" required>
+          <div class="invalid-feedback">
+            Please provide your college.
+          </div>
+        </div>
+
+        <!-- Event -->
+        <div class="form-group">
+          <label for="event">Competition / Workshop</label>
+          <select class="custom-select" id="event" name="event" required>
+            <option selected disabled value="">Choose...</option>
+
+            <option disabled></option>
+            <option class="h5" disabled>Non-Technical Events</option class="h5">
+            <option value="born_psychos">&nbsp;&nbsp;&nbsp;&nbsp;Born Psychos</option>
+            <option value="cric_bash">&nbsp;&nbsp;&nbsp;&nbsp;Cric Bash</option>
+            <option value="food_o_holic">&nbsp;&nbsp;&nbsp;&nbsp;Food-O-Holic</option>
+            <option value="open_mic">&nbsp;&nbsp;&nbsp;&nbsp;Eccentrics</option>
+            <option value="respawn" id="respawn">&nbsp;&nbsp;&nbsp;&nbsp;Respawn</option>
+            <option value="vaad_vivaad" id="vaad_vivaad">&nbsp;&nbsp;&nbsp;&nbsp;Vaad-Vivaad</option>
+            <option value="virtual_placement">&nbsp;&nbsp;&nbsp;&nbsp;Virtual Placement</option>
+
+            <option disabled></option>
+            <option class="h5" disabled>Technical Events</option>
+            <option value="avishkar">&nbsp;&nbsp;&nbsp;&nbsp;Avishkar</option>
+            <option value="bridge_o_craft">&nbsp;&nbsp;&nbsp;&nbsp;Bridge-O-Craft</option>
+            <option value="explique'o_code">&nbsp;&nbsp;&nbsp;&nbsp;Explique'O Code</option>
+            <option value="ravic">&nbsp;&nbsp;&nbsp;&nbsp;Ravic</option>
+            <option value="robo_soccer">&nbsp;&nbsp;&nbsp;&nbsp;Robo-Soccer</option>
+
+            <option disabled></option>
+            <option class="h5" disabled>Workshops</option>
+            <option value="ai_ml">&nbsp;&nbsp;&nbsp;&nbsp;AI-ML Workshop</option>
+            <option value="ic_engine">&nbsp;&nbsp;&nbsp;&nbsp;IC Engine</option>
+            <option value="stargaze">&nbsp;&nbsp;&nbsp;&nbsp;Stargaze</option>
+            <option value="total_station" id="total_station">&nbsp;&nbsp;&nbsp;&nbsp;Total Station</option>
+            <option value="Workflow">&nbsp;&nbsp;&nbsp;&nbsp;Workflow</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a competiton or workshop.
+          </div>
+        </div>
+
+        <!-- Games -->
+        <div class="form-group d-none" id="games">
+          <label for="game">Game</label>
+          <select class="custom-select" id="game" name="game">
+            <option selected disabled value="">Choose...</option>
+            <option value="pubg">&nbsp;&nbsp;&nbsp;&nbsp;PUBG</option>
+            <option value="csgo">&nbsp;&nbsp;&nbsp;&nbsp;CS:GO</option>
+            <option value="fifa">&nbsp;&nbsp;&nbsp;&nbsp;FIFA</option>
+          </select>
+          <div class="invalid-feedback">Please select a game.</div>
+        </div>
+
+        <!-- Category Selection -->
+        <div id="options">
+
+          <div class="form-group d-none" id="category_field">
+            <label for="category">Category</label>
+            <select class="custom-select" id="category" name="category">
+              <option selected disabled value="">Choose...</option>
+              <option value="single">&nbsp;&nbsp;&nbsp;&nbsp;Single</option>
+              <option value="double">&nbsp;&nbsp;&nbsp;&nbsp;Double</option>
+            </select>
+            <div class="invalid-feedback">Please select a category.</div>
+          </div>
+
+          <div class="form-group d-none" id="category_pubg_field">
+            <label for="category">Category</label>
+            <select class="custom-select" id="category_pubg" name="category_pubg">
+              <option selected disabled value="">Choose...</option>
+              <option value="solo">&nbsp;&nbsp;&nbsp;&nbsp;Solo</option>
+              <option value="squad">&nbsp;&nbsp;&nbsp;&nbsp;Squad</option>
+              <option value="custom">&nbsp;&nbsp;&nbsp;&nbsp;Classic + Custom Room</option>
+            </select>
+            <div class="invalid-feedback">Please select a category.</div>
+          </div>
+
+          <div class="form-group d-none" id="category_fifa_field">
+            <label for="category">Category</label>
+            <select class="custom-select" id="category_fifa" name="category_fifa">
+              <option selected disabled value="">Choose...</option>
+              <option value="solo">&nbsp;&nbsp;&nbsp;&nbsp;Solo</option>
+              <option value="duo">&nbsp;&nbsp;&nbsp;&nbsp;Duo</option>
+            </select>
+            <div class="invalid-feedback">Please select a category.</div>
+          </div>
+
+        </div>
+
+        <!-- No of Team Members -->
+        <div class="form-group d-none" id="no_of_team_members_field">
+          <label for="no_of_team_members">Number of Team Members</label>
+          <select class="custom-select" id="no_of_team_members" name="no_of_team_members">
+          </select>
+          <div class="invalid-feedback">Please select number of team members.</div>
+        </div>
+
+        <!-- Team Members -->
+        <div id="team_members"></div>
+
+        <button class="col-12 btn btn-primary my-3" type="submit" value="sub" name="submit">Submit</button>
+      </form>
+
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+
+</body>
+
+</html>
