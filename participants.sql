@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 14, 2020 at 10:03 PM
+-- Generation Time: May 14, 2020 at 10:25 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -36,8 +36,7 @@ CREATE TABLE `participants` (
   `idCard` varchar(255) NOT NULL,
   `registrationType` varchar(255) NOT NULL,
   `numberOfTickets` varchar(255) NOT NULL,
-  `dateAndTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `Status` varchar(255) NOT NULL
+  `dateAndTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
