@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 14, 2020 at 10:25 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- Host: 127.0.0.1
+-- Generation Time: May 15, 2020 at 12:08 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `event_registration`
+-- Database: `event`
 --
 
 -- --------------------------------------------------------
@@ -28,16 +29,28 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `participants` (
-  `id` int(11) NOT NULL,
-  `firstName` varchar(255) NOT NULL,
-  `lastName` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL,
-  `idCard` varchar(255) NOT NULL,
-  `registrationType` varchar(255) NOT NULL,
-  `numberOfTickets` varchar(255) NOT NULL,
-  `dateAndTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `ID` int(11) NOT NULL,
+  `FIRST-NAME` varchar(255) NOT NULL,
+  `LAST-NAME` varchar(255) NOT NULL,
+  `EMAIL` varchar(255) NOT NULL,
+  `PHONE` varchar(255) NOT NULL,
+  `ID-CARD` varchar(255) NOT NULL,
+  `REGISTRATION-TYPE` varchar(255) NOT NULL,
+  `NO_OF_TICKETS` varchar(255) NOT NULL,
+  `DATE` date NOT NULL DEFAULT current_timestamp(),
+  `TIME` time NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `participants`
+--
+
+INSERT INTO `participants` (`ID`, `FIRST-NAME`, `LAST-NAME`, `EMAIL`, `PHONE`, `ID-CARD`, `REGISTRATION-TYPE`, `NO_OF_TICKETS`, `DATE`, `TIME`) VALUES
+(1, 'Aman', 'sharma', 'aman05382@gmail.com', '9172322652', 'Aman  Logo.jpg', 'others', '1', '2020-05-15', '13:47:11'),
+(2, 'Aman', 'sharma', 'aman05382@gmail.com', '9172322652', 'Aman  Logo.jpg', 'group', '1', '2020-05-15', '13:51:54'),
+(3, 'madhulata', 'sharma', 'aman05382@gmail.com', '9172322652', 'Aman  Logo.jpg', 'corporate', '10', '2020-05-15', '14:09:51'),
+(7, 'Aman', 'sharma', 'aman05382@gmail.com', '9172322652', 'Aman  Logo.jpg', 'group', '2', '2020-05-15', '15:06:57'),
+(8, 'Aman', 'sharma', 'aman05382@gmail.com', '9172322652', 'Aman  Logo.jpg', 'self', '1', '2020-05-15', '15:08:14');
 
 --
 -- Indexes for dumped tables
@@ -47,7 +60,7 @@ CREATE TABLE `participants` (
 -- Indexes for table `participants`
 --
 ALTER TABLE `participants`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -57,7 +70,7 @@ ALTER TABLE `participants`
 -- AUTO_INCREMENT for table `participants`
 --
 ALTER TABLE `participants`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
