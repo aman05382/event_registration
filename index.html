@@ -89,12 +89,12 @@
         <!-- Number Of Tickets -->
         <div class="form-group">
 
-          <div style="display: none" id="self">
+          <div style="display: none;" id="self">
             <label for="no_of_tickets">Number Of Tickets</label>
-            <input type="text" class="form-control" value="1" id="no_of_tickets" name="no_of_tickets" required readonly>
+            <input type="text" class="form-control" value="1" id="no_of_tickets" name="no_of_tickets" readonly>
           </div>
 
-          <div style="display: none" id="other">
+          <div style="display: none;" id="other">
             <label for="no_of_tickets">Number Of Tickets</label>
             <input type="text" class="form-control" id="no_of_tickets" name="no_of_tickets" required>
           </div>
@@ -110,7 +110,6 @@
 
     </div>
   </div>
-  
 
 
 
@@ -138,14 +137,24 @@
 
   <script>
 
+    // function displayForm(elem) {
+    //   if (elem.value == "self") {
+    //     document.getElementById('other').style.display = "none";
+    //     document.getElementById('self').style.display = "block";
+    //   }
+    //   else {
+    //     document.getElementById('self').style.display = "none";
+    //     document.getElementById('other').style.display = "block";
+    //   }
+    // }
+
     function displayForm(elem) {
       if (elem.value == "self") {
-        document.getElementById('other').style.display = "none";
-        document.getElementById('self').style.display = "block";
-      } 
-      else {
-        document.getElementById('self').style.display = "none";
-        document.getElementById('other').style.display = "block";
+        $("#other").hide();
+        $("#self").show();
+      } else{
+        $("#self").hide();
+        $("#other").show();
       }
     }
 
