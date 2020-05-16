@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registration Form</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registration Form</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    <style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <style>
     body {
       background-color: #007bff;
     }
-    </style>
+  </style>
 </head>
 
 <body>
@@ -65,14 +65,14 @@
 
         <!-- ID Card -->
         <div class="form-group">
-        <label for="id_card">ID Card</label>
-        <div class="custom-file mb-3">
-          <input type="file" class="custom-file-input" id="customFile" name="id_card" required>
-          <label class="custom-file-label">Choose File</label>
-          <div class="invalid-feedback">
-            Please provide your ID Card.
+          <label for="id_card">ID Card</label>
+          <div class="custom-file mb-3">
+            <input type="file" class="custom-file-input" id="customFile" name="id_card" required>
+            <label class="custom-file-label">Choose File</label>
+            <div class="invalid-feedback">
+              Please provide your ID Card.
+            </div>
           </div>
-        </div>
         </div>
 
         <!-- Registration Type -->
@@ -142,7 +142,7 @@
 
   <script>
     // The following code is used to display the name of selected file to upload
-    $(".custom-file-input").on("change", function() {
+    $(".custom-file-input").on("change", function () {
       var fileName = $(this).val().split("\\").pop();
       $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
     });
@@ -166,7 +166,7 @@
       if (elem.value == "self") {
         $("#other").hide();
         $("#self").show();
-      } else{
+      } else {
         $("#self").hide();
         $("#other").show();
       }
