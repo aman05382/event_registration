@@ -25,7 +25,7 @@
 
       <h4 class="h2 text-center mt-3 mb-5">Registration Form</h4>
 
-      <form class="needs-validation" novalidate action="register.php" method="POST">
+      <form class="needs-validation" novalidate action="preview.php" method="POST">
 
         <!-- Name -->
         <div class="form-row">
@@ -81,10 +81,10 @@
           <select class="custom-select" id="registration_type" name="registration_type" onchange="displayForm(this)"
             required>
             <option selected disabled value="">Choose...</option>
-            <option value="self">&nbsp;&nbsp;&nbsp;&nbsp;Self</option>
-            <option value="group">&nbsp;&nbsp;&nbsp;&nbsp;Group</option>
-            <option value="corporate">&nbsp;&nbsp;&nbsp;&nbsp;Corporate</option>
-            <option value="others">&nbsp;&nbsp;&nbsp;&nbsp;Others</option>
+            <option value="Self">&nbsp;&nbsp;&nbsp;&nbsp;Self</option>
+            <option value="Group">&nbsp;&nbsp;&nbsp;&nbsp;Group</option>
+            <option value="Corporate">&nbsp;&nbsp;&nbsp;&nbsp;Corporate</option>
+            <option value="Others">&nbsp;&nbsp;&nbsp;&nbsp;Others</option>
           </select>
           <div class="invalid-feedback">
             Please select Registration Type.
