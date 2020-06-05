@@ -94,6 +94,7 @@ require('../db.php');
                                             <th>REGISTRATION TYPE</th>
                                             <th>NO OF TICKETS</th>
                                             <th>ID-CARD</th>
+                                            <th>REGISTRATION-ID</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -105,6 +106,7 @@ require('../db.php');
                                             <th>REGISTRATION TYPE</th>
                                             <th>NO OF TICKETS</th>
                                             <th>ID-CARD</th>
+                                            <th>REGISTRATION-ID</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -117,9 +119,10 @@ require('../db.php');
                                             $lname = $row['LAST-NAME'];
                                             $email=$row['EMAIL'];
                                             $phone=$row['PHONE'];
-                                            $register=$row['REGISTRATION-TYPE];
-                                            $ticket=$row['NO_OF_TICKETS'];
+                                            $register=$row['REGISTRATION-TYPE'];
+                                            $ticket = $row['NO_OF_TICKETS'];
                                             $card=$row['ID-CARD'];
+                                            $regid=$row['REGISTRATION-ID'];
                                         ?>
                                         <tr align="center">
                                             <td><?php echo $id; ?></td>
@@ -129,6 +132,7 @@ require('../db.php');
                                             <td><?php echo $register ?></td>
                                             <td><?php echo $ticket; ?></td>
                                             <td><?php echo $card ?></td>
+                                            <td><?php echo $regid ?></td>
                                         </tr>
 
                                         <?php } 
