@@ -56,10 +56,10 @@ include('session.php');
                             Dashboard
                         </a>
                         <div class="sb-sidenav-menu-heading">Pages</div>
-                        <a class="nav-link" href="charts.html">
+                        <a class="nav-link" href="charts.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Charts
-                        </a><a class="nav-link" href="tables.html">
+                        </a><a class="nav-link" href="tables.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Entries
                         </a>
@@ -176,7 +176,7 @@ include('session.php');
                                         ?>
                                         <tr align="center">
                                             <td><?php echo $id; ?></td>
-                                            <td><?php echo $fname; ?></td>
+                                            <td><?php echo $fname . ' ' . $lname; ?></td>
                                             <td><?php echo $email; ?></td>
                                             <td><?php echo $phone; ?></td>
                                             <td><?php echo $register ?></td>

@@ -126,7 +126,7 @@ require('../db.php');
                                         ?>
                                         <tr align="center">
                                             <td><?php echo $id; ?></td>
-                                            <td><?php echo $fname; ?></td>
+                                            <td><?php echo $fname . ' ' . $lname; ?></td>
                                             <td><?php echo $email; ?></td>
                                             <td><?php echo $phone; ?></td>
                                             <td><?php echo $register ?></td>
