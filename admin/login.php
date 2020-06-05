@@ -19,9 +19,9 @@ $password = stripslashes($password);
 $username = mysqli_real_escape_string($connection,$username);
 $password = mysqli_real_escape_string($connection,$password);
 // Selecting Database
-$db = mysqli_select_db("event", $connection);
+$db = mysqli_select_db($connection, 'event');
 // SQL query to fetch information of registerd users and finds user match.
-$query = mysqli_query("SELECT * FROM `login` WHERE PASSWORD='$password' AND USERNAME='$username'", $connection);
+$query = mysqli_query($connection,"SELECT * FROM `login` WHERE PASSWORD='$password' AND USERNAME='$username'");
 $rows = mysqli_num_rows($query);
 if ($rows == 1) {
 $_SESSION['login_user']=$username; // Initializing Session

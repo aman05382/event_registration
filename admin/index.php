@@ -2,7 +2,7 @@
 include('login.php'); // Includes Login Script
 
 if (isset($_SESSION['login_user'])) {
-    header("location: profile.php");
+    header("location: dashboard.php");
 }
 ?>
 <!DOCTYPE html>
@@ -35,7 +35,7 @@ if (isset($_SESSION['login_user'])) {
                                         <div class="form-group"><label class="small mb-1">Email</label><input class="form-control py-4" type="text" name="username" placeholder="Enter email address" /></div>
                                         <div class="form-group"><label class="small mb-1">Password</label><input class="form-control py-4" type="password" name="password" placeholder="Enter password" /></div>
 
-                                        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><button type="submit" class="btn btn-primary">Login</button></div>
+                                        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><button name="submit" type="submit" class="btn btn-primary">Login</button></div>
                                         <span><?php echo $error; ?></span>
                                     </form>
 
